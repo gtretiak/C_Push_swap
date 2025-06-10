@@ -47,10 +47,11 @@ By "the cost" number of operations is meant.
 So, I used double linked lists containing neccessary information.
 
 ## How to test it?
-1. Clone the repository
+1. Clone the repository, cd
 2. Clone the Libft repository https://github.com/gtretiak/C_libft
-3. Compile with make command
-4. Run the program
+3. Name it Libft
+4. Compile with make an make_bonus commands
+5. Run the programs
 ## Usage Examples
 
 ### Basic Usage
