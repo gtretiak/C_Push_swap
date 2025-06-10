@@ -52,10 +52,9 @@ So, I used double linked lists containing neccessary information.
 3. Name it Libft
 4. Compile with make an make_bonus commands
 5. Run the program
-6. Run the program with checker (or checker_linux)
-7. Run push_swap_tester 
-8. Run bash another_test.sh
-9. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
+6. Run the program with checker (or checker_linux, but first run chmod u+x checker_linux)
+7. Run bash another_test.sh (but first run chmod u+x another_test.sh)
+8. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ## Usage Examples
 
 ### Basic Usage
