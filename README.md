@@ -53,8 +53,9 @@ So, I used double linked lists containing neccessary information.
 4. Compile with make an make_bonus commands
 5. Run the program
 6. Run the program with checker (or checker_linux)
-7. Cd push_swap_tester, and run bash basic_test.sh or bash loop.sh (with arguments)
+7. Run push_swap_tester 
 8. Run bash another_test.sh
+9. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ## Usage Examples
 
 ### Basic Usage
