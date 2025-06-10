@@ -51,7 +51,10 @@ So, I used double linked lists containing neccessary information.
 2. Clone the Libft repository https://github.com/gtretiak/C_libft
 3. Name it Libft
 4. Compile with make an make_bonus commands
-5. Run the programs
+5. Run the program
+6. Run the program with checker (or checker_linux)
+7. Cd push_swap_tester, and run bash basic_test.sh or bash loop.sh (with arguments)
+8. Run bash another_test.sh
 ## Usage Examples
 
 ### Basic Usage
