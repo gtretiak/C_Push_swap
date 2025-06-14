@@ -6,7 +6,7 @@
 #    By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 14:02:12 by gtretiak          #+#    #+#              #
-#    Updated: 2025/03/06 14:29:09 by gtretiak         ###   ########.fr        #
+#    Updated: 2025/06/14 17:07:58 by gtretiak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CHECKER_LIB = checker.a
 HEADER = push_swap.h
 HEADER_B = push_swap_bonus.h
 LIBFT = libft.a
-LIBFT_DIR = Libft/
+LIBFT_DIR = C_libft/
 SRCS = main.c freeing.c ft_create_and_validate.c push.c reverse_rotate.c \
        rotate.c sorting.c sort_many.c swap.c utils.c upgrade.c
 SRCS_B = main_bonus.c freeing_bonus.c push_bonus.c reverse_rotate_bonus.c \

@@ -6,7 +6,7 @@
 /*   By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 14:02:48 by gtretiak          #+#    #+#             */
-/*   Updated: 2025/03/06 14:14:42 by gtretiak         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:08:26 by gtretiak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
-# include "Libft/libft.h"
+# include "C_libft/libft.h"
 
 # ifndef MAXINT
 #  define MAXINT 2147483647
