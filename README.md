@@ -50,10 +50,11 @@ So, I used double linked lists containing neccessary information.
 1. Clone the repository, cd
 2. Clone the Libft repository https://github.com/gtretiak/C_libft
 3. Compile with 'make' and 'make_bonus' commands
-4. Run the program
-5. Run the program with checker (or checker_linux, but first run chmod u+x checker_linux)
+4. Run the program with unsorted numeric arguments
+5. Run the program alongside the checker (or checker_linux, but first run chmod u+x checker_linux)
 6. Run bash another_test.sh (but first run chmod u+x another_test.sh)
-7. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
+7. cd Push_tester and run bash basic.sh or bash loop <> <>
+8. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ## Usage Examples
 
 ### Basic Usage
