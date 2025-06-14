@@ -49,12 +49,11 @@ So, I used double linked lists containing neccessary information.
 ## How to test it?
 1. Clone the repository, cd
 2. Clone the Libft repository https://github.com/gtretiak/C_libft
-3. Name it Libft
-4. Compile with make an make_bonus commands
-5. Run the program
-6. Run the program with checker (or checker_linux, but first run chmod u+x checker_linux)
-7. Run bash another_test.sh (but first run chmod u+x another_test.sh)
-8. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
+3. Compile with 'make' and 'make_bonus' commands
+4. Run the program
+5. Run the program with checker (or checker_linux, but first run chmod u+x checker_linux)
+6. Run bash another_test.sh (but first run chmod u+x another_test.sh)
+7. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ## Usage Examples
 
 ### Basic Usage
