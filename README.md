@@ -54,7 +54,7 @@ So, I used double linked lists containing neccessary information.
 5. Run the program alongside the checker (or checker_linux, but first run chmod u+x checker_linux)
 6. Run bash another_test.sh (but first run chmod u+x another_test.sh)
 7. cd push_swap_tester and run bash basic_test.sh or bash loop.sh with the stack size and the loop times (This push_swap_tester is adapted by me version to check for leaks with valgrind. Original repository: https://github.com/LeoFu9487/push_swap_tester)
-8. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
+8. Run Visualizer: https://github.com/o-reo/push_swap_visualizer
 ## Usage Examples
 
 ### Basic Usage
