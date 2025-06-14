@@ -53,7 +53,7 @@ So, I used double linked lists containing neccessary information.
 4. Run the program with unsorted numeric arguments
 5. Run the program alongside the checker (or checker_linux, but first run chmod u+x checker_linux)
 6. Run bash another_test.sh (but first run chmod u+x another_test.sh)
-7. cd Push_tester and run bash basic.sh or bash loop <> <>
+7. cd push_swap_tester and run bash basic_test.sh or bash loop.sh with the stack size and the loop times
 8. Run Visualizer: https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ## Usage Examples
 
