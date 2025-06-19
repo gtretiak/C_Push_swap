@@ -4,6 +4,12 @@ Optimized sorting algorithm using two stacks.
 ## Project Overview
 Push_swap is an algorithmic project. The task is to sort a set of integers, using just two stacks and a very limited set of operations, with a focus on achieving the minimal number of actions possible. 
 To demonstrates algorithmic efficiency, understanding of sorting complexities, and optimization skills are required.
+![Stacks](images/push_swap_stacks.png)
+![Unsorted_to_sorted](images/push_swap_unsorted_to_sorted.png)
+![Operations](images/push_swap_operations.png)
+![Sorting_strategy](images/push_swap_sorting_strategy.png)
+![Operations_chart](images/push_swap_operations_chart.png)
+![Sorting_results_summary](images/push_swap_sorting_results_summary.png)
 
 ## Project Purpose & Objectives
 The goal is to implement as efficient as possible sorting algorithm in the given constraints (e.g. two stacks with limited operations).
@@ -48,13 +54,12 @@ So, I used double linked lists containing neccessary information.
 
 ## How to test it?
 1. Clone the repository, cd
-2. Clone the Libft repository https://github.com/gtretiak/C_libft
-3. Compile with 'make' and 'make_bonus' commands
-4. Run the program with unsorted numeric arguments
-5. Run the program alongside the checker (or checker_linux, but first run chmod u+x checker_linux)
-6. Run bash another_test.sh (but first run chmod u+x another_test.sh)
-7. cd push_swap_tester and run bash basic_test.sh or bash loop.sh with the stack size and the loop times (This push_swap_tester is adapted by me version to check for leaks with valgrind. Original repository: https://github.com/LeoFu9487/push_swap_tester)
-8. Run Visualizer: https://github.com/o-reo/push_swap_visualizer
+2. Compile with 'make' and 'make_bonus' commands
+3. Run the program with unsorted numeric arguments
+4. Run the program alongside the checker (or checker_linux, but first run chmod u+x checker_linux)
+5. Run bash another_test.sh (but first run chmod u+x another_test.sh)
+6. cd push_swap_tester and run bash basic_test.sh or bash loop.sh with the stack size and the loop times (This push_swap_tester is adapted by me version to check for leaks with valgrind. Original repository: https://github.com/LeoFu9487/push_swap_tester)
+7. Run Visualizer: https://github.com/o-reo/push_swap_visualizer
 ## Usage Examples
 
 ### Basic Usage
