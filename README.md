@@ -9,7 +9,6 @@ To demonstrates algorithmic efficiency, understanding of sorting complexities, a
 ![Operations](images/push_swap_operations.png)
 ![Sorting_strategy](images/push_swap_sorting_strategy.png)
 ![Operations_chart](images/push_swap_operations_chart.png)
-![Sorting_results_summary](images/push_swap_sorting_results_summary.png)
 
 ## Project Purpose & Objectives
 The goal is to implement as efficient as possible sorting algorithm in the given constraints (e.g. two stacks with limited operations).
