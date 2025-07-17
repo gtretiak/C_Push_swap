@@ -34,6 +34,7 @@ typedef struct s_stack
 	int					nb;
 }	t_stack;
 
+// Utils
 long	ft_atol(const char *str);
 int		ft_check_if_sorted(t_stack *a);
 void	ft_create_and_validate(t_stack **a, char **numbers, bool marg);
@@ -42,13 +43,16 @@ int		ft_check_dup(t_stack *a, int n);
 void	ft_append_node(t_stack **a, int n);
 t_stack	*ft_find_last(t_stack *head);
 
+// Freeing
 void	ft_free_split(char **arr);
 void	ft_free_errors(t_stack **a, char **numbers, bool marg);
 void	ft_free_stack(t_stack **a);
 
+// Execution
 void	ft_reading(t_stack **a, t_stack **b);
 int		ft_execute(t_stack **a, t_stack **b, char *cmd);
 
+// Stack operations
 void	ft_pa(t_stack **a, t_stack **b);
 void	ft_pb(t_stack **a, t_stack **b);
 void	ft_sa(t_stack **a);
