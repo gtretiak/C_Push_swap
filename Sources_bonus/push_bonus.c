@@ -16,24 +16,24 @@ static void	ft_push(t_stack **src, t_stack **dest)
 {
 	t_stack	*target;
 
-	if (!src || !(*src))
+	if (!src || !(*src)) // there´s nothing to push
 		return ;
-	target = *src;
-	if ((*src)->next)
+	target = *src; // storing the current top node in the target node
+	if ((*src)->next) // if the src stack has more than one node, we move the head pointer to the next node
 	{
 		*src = (*src)->next;
 		(*src)->prev = NULL;
 	}
-	else
+	else // otherwise just setting the stack to NULL (empty)
 		*src = NULL;
-	if (*dest)
+	if (*dest) // if the dest stack is not empty, we link the target node in front of the current dest head
 	{
 		(*dest)->prev = target;
 		target->next = *dest;
 		target->prev = NULL;
 		*dest = target;
 	}
-	else
+	else // otherwise we just make the target the new dest head
 	{
 		*dest = target;
 		(*dest)->next = NULL;
@@ -42,14 +42,14 @@ static void	ft_push(t_stack **src, t_stack **dest)
 }
 
 void	ft_pa(t_stack **a, t_stack **b)
-{
+{ // moving from b to a
 	if (!b || !(*b))
 		return ;
 	ft_push(b, a);
 }
 
 void	ft_pb(t_stack **a, t_stack **b)
-{
+{ // moving from a to b
 	if (!a || !(*a))
 		return ;
 	ft_push(a, b);
