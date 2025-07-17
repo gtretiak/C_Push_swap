@@ -18,12 +18,12 @@ static void	ft_rotate(t_stack **stack)
 
 	if (!stack || (!(*stack)))
 		return ;
-	last = ft_find_last(*stack);
-	last->next = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	last->next->prev = last;
-	last->next->next = NULL;
+	last = ft_find_last(*stack);  // we find the last one
+	last->next = *stack; // link it to the current head
+	*stack = (*stack)->next; // move the head one node forward
+	(*stack)->prev = NULL; // now the second node in on the top
+	last->next->prev = last; // now the former last node in the second last
+	last->next->next = NULL; // now the previous head is the last one
 }
 
 void	ft_ra(t_stack **a)
