@@ -18,12 +18,12 @@ static void	ft_reverse_rotate(t_stack **stack)
 
 	if (!stack || (!(*stack)))
 		return ;
-	last = ft_find_last(*stack);
-	last->next = *stack;
+	last = ft_find_last(*stack);  // we find the last one
+	last->next = *stack; // and attach it to the front of the stack
 	(*stack)->prev = last;
-	last->prev->next = NULL;
+	last->prev->next = NULL; // detaching from the previous position
 	last->prev = NULL;
-	(*stack) = last;
+	(*stack) = last; // now it´s the first element
 }
 
 void	ft_rra(t_stack **a)
