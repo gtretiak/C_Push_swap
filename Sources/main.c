@@ -52,14 +52,14 @@ int	ft_get_len(t_stack *stack)
 		len++;
 		stack = stack->next;
 	}
-	return (len);
+	return (len); // returns the number of elements in the stack
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**numbers;
+	t_stack	*a; // input stack
+	t_stack	*b; // auxiliary stack used for sorting
+	char	**numbers; // array of strings in case of quoted input like "1 234 5687 984"
 
 	a = NULL;
 	b = NULL;
@@ -70,13 +70,13 @@ int	main(int argc, char **argv)
 		numbers = ft_split(argv[1], ' ');
 		if (!numbers)
 			return (1);
-		ft_create_and_validate(&a, numbers, true);
-		ft_free_split(numbers);
+		ft_create_and_validate(&a, numbers, true); // passing numbers
+		ft_free_split(numbers); // then freeing
 	}
 	else
-		ft_create_and_validate(&a, argv + 1, false);
+		ft_create_and_validate(&a, argv + 1, false); // passing arguments
 	if (!ft_check_if_sorted(a))
-		ft_sort(&a, &b, ft_get_len(a));
+		ft_sort(&a, &b, ft_get_len(a)); // calling the sorting algorithm with the size of the stack
 	ft_free_stack(&a);
 	return (0);
 }
