@@ -18,29 +18,29 @@ static void	ft_swap(t_stack **stack)
 	t_stack	*second;
 
 	if (!stack || !(*stack) || !(*stack)->next)
-		return ;
+		return ; // if stack is NULL, empty or has just one node
 	first = *stack;
 	second = first->next;
 	*stack = second;
-	first->next = second->next;
-	if (first->next)
-		first->next->prev = first;
-	second->next = first;
+	first->next = second->next; // now the first points to the third node (or NULL)
+	if (first->next) // there´s the third node
+		first->next->prev = first; // so let it point to the first
+	second->next = first; // new head
 	first->prev = second;
-	second->prev = NULL;
+	second->prev = NULL; // new head
 }
 
 void	ft_sa(t_stack **a)
 {
 	ft_swap(a);
-	if ((*a)->next)
+	if ((*a)->next) // only if there are at least two nodes
 		write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_stack **b)
 {
 	ft_swap(b);
-	if ((*b)->next)
+	if ((*b)->next) // only if there are at least two nodes
 		write(1, "sb\n", 3);
 }
 
