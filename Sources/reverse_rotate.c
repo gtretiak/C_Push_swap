@@ -18,12 +18,12 @@ static void	ft_reverse_rotate(t_stack **stack)
 
 	if (!stack || (!(*stack)))
 		return ;
-	last = ft_find_last(*stack);
-	last->next = *stack;
+	last = ft_find_last(*stack); // we find the last one
+	last->next = *stack; // and attach it to the front of the stack
 	(*stack)->prev = last;
-	last->prev->next = NULL;
-	last->prev = NULL;
-	(*stack) = last;
+	last->prev->next = NULL; // detaching from the previous position
+	last->prev = NULL; 
+	(*stack) = last; // now it´s the first element
 }
 
 void	ft_rra(t_stack **a)
@@ -48,7 +48,7 @@ void	ft_rrr(t_stack **a, t_stack **b)
 void	ft_reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->target && *b != cheapest)
-		ft_rrr(a, b);
-	ft_set_index(a);
+		ft_rrr(a, b); // while the head of the stack a is not the target for cheapest, and stack b’s head is not the cheapest node itself
+	ft_set_index(a); // recalculating node indecis after movement to find the cheapest node again
 	ft_set_index(b);
 }
