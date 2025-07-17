@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-void	ft_smart_pb(t_stack **a, t_stack **b)
-{
+void	ft_smart_pb(t_stack **a, t_stack **b) 
+{ // calculating indexes, rotation direction, targets, costs, cheapests
 	ft_set_index(a);
 	ft_set_index(b);
-	ft_set_target_biggest(a, b);
+	ft_set_target_biggest(a, b); 
 	ft_get_cost_a(a, b);
 	ft_set_cheapest(a);
 	ft_move_a_to_b(a, b);
@@ -28,13 +28,13 @@ void	ft_move_a_to_b(t_stack **a, t_stack **b)
 
 	cheapest = ft_return_cheapest(*a);
 	if (cheapest->above_median
-		&& cheapest->target->above_median)
-		ft_rotate_both(b, a, cheapest);
+		&& cheapest->target->above_median) // if the nodes in both stacks are above median
+		ft_rotate_both(b, a, cheapest); 
 	else if (!(cheapest->above_median)
-		&& !(cheapest->target->above_median))
+		&& !(cheapest->target->above_median)) // if the nodes in both stacks are below median
 		ft_reverse_rotate_both(b, a, cheapest);
-	ft_finish_him(a, cheapest, 'a');
-	ft_finish_him(b, cheapest->target, 'b');
+	ft_finish_him(a, cheapest, 'a'); // separately A with the cheapest
+	ft_finish_him(b, cheapest->target, 'b'); // separately B with the target of the cheapest
 	ft_pb(a, b);
 }
 
@@ -46,20 +46,20 @@ void	ft_set_target_biggest(t_stack **a, t_stack **b)
 	int		match;
 
 	curra = *a;
-	while (curra)
+	while (curra) // for every node in A
 	{
-		match = MININT;
+		match = MININT; // starting with INT_MIN
 		currb = *b;
-		while (currb)
+		while (currb) // iterating through the stack B
 		{
-			if (currb->nb < curra->nb && currb->nb > match)
+			if (currb->nb < curra->nb && currb->nb > match) // we try find the biggest number in B, that is smaller than current number in A
 			{
 				match = currb->nb;
 				target = currb;
 			}
 			currb = currb->next;
 		}
-		if (match == MININT)
+		if (match == MININT) // that means we didn´t find it, so let´s take the biggest one
 			curra->target = ft_find_biggest(*b);
 		else
 			curra->target = target;
@@ -67,7 +67,7 @@ void	ft_set_target_biggest(t_stack **a, t_stack **b)
 	}
 }
 
-void	ft_get_cost_a(t_stack **a, t_stack **b)
+void	ft_get_cost_a(t_stack **a, t_stack **b) // logic similar to get_cost, but this time it calculates costs to push from A to B
 {
 	int		len_a;
 	int		len_b;
