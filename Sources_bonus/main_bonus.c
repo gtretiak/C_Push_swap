@@ -41,7 +41,7 @@ long	ft_atol(const char *str)
 }
 
 int	ft_execute(t_stack **a, t_stack **b, char *cmd)
-{
+{ // actual executing based on the given cmd
 	if (!ft_strncmp(cmd, "ra\n", 3))
 		ft_ra(a);
 	else if (!ft_strncmp(cmd, "rb\n", 3))
@@ -69,13 +69,13 @@ int	ft_execute(t_stack **a, t_stack **b, char *cmd)
 	return (0);
 }
 
-int	ft_check_if_sorted(t_stack *a)
+int	ft_check_if_sorted(t_stack *a) // in ascending order
 {
 	if (!a)
 		return (1);
 	while (a->next)
 	{
-		if (a->nb > a->next->nb)
+		if (a->nb > a->next->nb) // oif any number is greater than the next -> not sorted
 			return (0);
 		a = a->next;
 	}
@@ -87,20 +87,20 @@ void	ft_reading(t_stack **a, t_stack **b)
 	char	*cmd;
 	int		status;
 
-	while (1)
+	while (1) // endless loop for reading commands
 	{
 		cmd = get_next_line(0, 1);
-		if (cmd == NULL)
+		if (cmd == NULL) // CTRL+D
 			break ;
 		status = ft_execute(a, b, cmd);
 		free(cmd);
-		if (status)
+		if (status) // 1 means invalid cmd
 		{
 			ft_free_stack(b);
 			ft_free_errors(a, NULL, false);
 		}
 	}
-	if (ft_check_if_sorted(*a) && !*b)
+	if (ft_check_if_sorted(*a) && !*b) // Here we check if the stack a is sorted and the stack b is empty
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -110,9 +110,9 @@ void	ft_reading(t_stack **a, t_stack **b)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**numbers;
+	t_stack	*a; // input stack
+	t_stack	*b; // auxiliary stack used for sorting
+	char	**numbers; // array of strings in case of quoted input like "1 234 5687 984"
 
 	a = NULL;
 	b = NULL;
@@ -123,11 +123,11 @@ int	main(int argc, char **argv)
 		numbers = ft_split(argv[1], ' ');
 		if (!numbers)
 			return (1);
-		ft_create_and_validate(&a, numbers, true);
-		ft_free_split(numbers);
+		ft_create_and_validate(&a, numbers, true);  // passing numbers
+		ft_free_split(numbers); // then freeing
 	}
 	else
-		ft_create_and_validate(&a, argv + 1, false);
+		ft_create_and_validate(&a, argv + 1, false); // passing arguments
 	ft_reading(&a, &b);
 	ft_free_stack(&a);
 	return (0);
