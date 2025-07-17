@@ -18,7 +18,7 @@ int	ft_check_dup(t_stack *a, int n)
 		return (0);
 	while (a)
 	{
-		if (a->nb == n)
+		if (a->nb == n) // if any number in the stack is equal to a certain number
 			return (1);
 		a = a->next;
 	}
@@ -32,17 +32,17 @@ int	ft_check_syntax(char *str)
 
 	i = 0;
 	sign = 0;
-	if (str[i] == '\0')
+	if (str[i] == '\0') // empty string -> invalid
 		return (1);
 	while (str[i])
 	{
 		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == 43 || str[i] == 45))
-			return (1);
+			return (1); // not a digit or a sign
 		else if (str[i] == 43 || str[i] == 45)
 		{
 			if (sign > 0 || !(str[i + 1] >= '0' && str[i + 1] <= '9')
-				|| (i > 0 && str[i - 1] != 32))
-				return (1);
+				|| (i > 0 && str[i - 1] != 32)) // if it´s not the begining of the string, then previous char should be space
+				return (1); // if the sign has already appeared and the next char (after a sign) is a digit
 			sign++;
 		}
 		i++;
@@ -72,12 +72,12 @@ void	ft_append_node(t_stack **a, int n)
 	node->next = NULL;
 	node->nb = n;
 	node->cheapest = false;
-	if (!(*a))
+	if (!(*a)) // if the stack is empty yet, then the node is the first one
 	{
 		*a = node;
 		node->prev = NULL;
 	}
-	else
+	else // otherwise appending to the tail
 	{
 		last = ft_find_last(*a);
 		last->next = node;
@@ -91,14 +91,14 @@ void	ft_create_and_validate(t_stack **a, char **numbers, bool marg)
 	int		i;
 
 	i = 0;
-	while (numbers[i])
+	while (numbers[i]) // iterating through all the strings-numbers
 	{
-		if (ft_check_syntax(numbers[i]))
+		if (ft_check_syntax(numbers[i])) // if syntax is invalid
 			ft_free_errors(a, numbers, marg);
 		n = ft_atol(numbers[i]);
-		if (n > MAXINT || n < MININT)
+		if (n > MAXINT || n < MININT) // if it´s integer overflow case
 			ft_free_errors(a, numbers, marg);
-		if (ft_check_dup(*a, (int)n))
+		if (ft_check_dup(*a, (int)n)) // or if there´s a duplicate number
 			ft_free_errors(a, numbers, marg);
 		ft_append_node(a, (int)n);
 		i++;
