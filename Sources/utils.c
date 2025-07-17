@@ -14,24 +14,24 @@
 
 void	ft_move_b_to_a(t_stack **a, t_stack **b)
 {
-	ft_finish_him(a, (*b)->target, 'a');
+	ft_finish_him(a, (*b)->target, 'a'); // we will rotate a to place on the top the node which is needed node to push on from b to a
 	ft_pa(a, b);
 }
 
 void	ft_finish_him(t_stack **stack, t_stack *node_to_top, char name)
 {
-	while (*stack != node_to_top)
+	while (*stack != node_to_top) // while the target node isn´t on the top
 	{
-		if (name == 'a')
+		if (name == 'a') // stack determination
 		{
-			if (node_to_top->above_median)
+			if (node_to_top->above_median) // rotation deirection determination
 				ft_ra(stack);
 			else
 				ft_rra(stack);
 		}
 		else
 		{
-			if (node_to_top->above_median)
+			if (node_to_top->above_median) // rotation deirection determination
 				ft_rb(stack);
 			else
 				ft_rrb(stack);
@@ -47,11 +47,11 @@ void	ft_set_cheapest(t_stack **stack)
 
 	if (!stack || !*stack)
 		return ;
-	price = MAXINT;
+	price = MAXINT; // starting with INT_MAX
 	curr = *stack;
-	while (curr)
+	while (curr) // iterating through the stack
 	{
-		if (curr->cost < price)
+		if (curr->cost < price) // if reassign value of price with the smallest cost
 		{
 			price = curr->cost;
 			match_node = curr;
@@ -69,13 +69,13 @@ void	ft_set_target(t_stack **a, t_stack **b)
 	int		match;
 
 	currb = *b;
-	while (currb)
+	while (currb) // for every node in B we will find the target node in A
 	{
 		match = MAXINT;
 		curra = *a;
-		while (curra)
+		while (curra) // iterating through the stack A, we compare numbers with the current B node
 		{
-			if (curra->nb > currb->nb && curra->nb < match)
+			if (curra->nb > currb->nb && curra->nb < match) // we need the smallest A number, that is bigger than B
 			{
 				match = curra->nb;
 				target = curra;
@@ -99,9 +99,9 @@ void	ft_get_cost(t_stack **a, t_stack **b)
 	len_a = ft_get_len(*a);
 	len_b = ft_get_len(*b);
 	curr = *b;
-	while (curr)
+	while (curr) // iterating through the stack we compute the price for movements
 	{
-		curr->cost = curr->index;
+		curr->cost = curr->index; 
 		if (!curr->above_median)
 			curr->cost = len_b - curr->index;
 		if (curr->target->above_median)
