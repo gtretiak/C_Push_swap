@@ -18,12 +18,12 @@ static void	ft_rotate(t_stack **stack)
 
 	if (!stack || (!(*stack)))
 		return ;
-	last = ft_find_last(*stack);
-	last->next = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	last->next->prev = last;
-	last->next->next = NULL;
+	last = ft_find_last(*stack); // we find the last one
+	last->next = *stack; // link it to the current head
+	*stack = (*stack)->next; // move the head one node forward
+	(*stack)->prev = NULL; // now the second node in on the top
+	last->next->prev = last; // now the former last node in the second last
+	last->next->next = NULL; // now the previous head is the last one
 }
 
 void	ft_ra(t_stack **a)
@@ -47,8 +47,8 @@ void	ft_rr(t_stack **a, t_stack **b)
 
 void	ft_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-	while (*a != cheapest->target && *b != cheapest)
-		ft_rr(a, b);
-	ft_set_index(a);
+	while (*a != cheapest->target && *b != cheapest) 
+		ft_rr(a, b); // while the top of the stack a is not the cheapest node's target and the top of stack b is not the cheapest node
+	ft_set_index(a); // recalculating costs
 	ft_set_index(b);
 }
