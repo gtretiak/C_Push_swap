@@ -14,7 +14,7 @@
 
 void	ft_free_errors(t_stack **a, char **numbers, bool marg)
 {
-	if (marg == true)
+	if (marg == true) // marg stands for multiple args that were given as one string
 		ft_free_split(numbers);
 	if (a)
 		ft_free_stack(a);
